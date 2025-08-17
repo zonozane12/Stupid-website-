@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupid Website™ - The Dumbest Place Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes rainbow {
+            0% { background-color: red; }
+            14% { background-color: orange; }
+            28% { background-color: yellow; }
+            42% { background-color: green; }
+            57% { background-color: blue; }
+            71% { background-color: indigo; }
+            85% { background-color: violet; }
+            100% { background-color: red; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .stupid-spin {
+            animation: spin 0.5s linear infinite;
+        }
+        .stupid-rainbow {
+            animation: rainbow 5s linear infinite;
+        }
+        .stupid-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .stupid-cursor {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤪</text></svg>"), auto;
+        }
+        .stupid-font {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+    </style>
+</head>
+<body class="stupid-cursor stupid-font min-h-screen bg-yellow-100 overflow-x-hidden">
+    <!-- Annoying floating emoji -->
+    <div class="fixed top-10 right-10 text-6xl stupid-float">🤪</div>
+    <div class="fixed bottom-10 left-10 text-6xl stupid-float" style="animation-delay: 1s;">🤡</div>
+    <div class="fixed top-1/2 left-1/4 text-6xl stupid-float" style="animation-delay: 2s;">👻</div>
+
+    <!-- Main content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-12 p-6 rounded-xl stupid-rainbow text-center border-8 border-dashed border-purple-600">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 stupid-spin">STUPID WEBSITE™</h1>
+            <p class="text-2xl">The most pointless website on the internet (probably)</p>
+            <div class="mt-4">
+                <button id="stupid-button" class="px-8 py-4 bg-green-500 hover:bg-red-500 text-white font-bold rounded-full text-2xl transition-all duration-100 transform hover:scale-150 hover:rotate-180">
+                    DON'T CLICK ME!
+                </button>
+            </div>
+        </header>
+
+        <!-- Stupid features -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Feature 1 -->
+            <div class="bg-pink-300 p-6 rounded-lg shadow-lg transform hover:skew-x-12 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Useless Counter</h2>
+                <div class="text-center mb-4">
+                    <span id="counter" class="text-5xl font-bold">0</span>
+                </div>
+                <button id="increment" class="w-full py-3 bg-blue-400 hover:bg-blue-600 text-white font-bold rounded">
+                    Click to waste time
+                </button>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-blue-300 p-6 rounded-lg shadow-lg transform hover:rotate-6 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Random Noise</h2>
+                <div class="text-center mb-4">
+                    <button id="play-noise" class="px-6 py-3 bg-red-400 hover:bg-red-600 text-white font-bold rounded">
+                        🔊 Play annoying sound
+                    </button>
+                </div>
+                <div class="text-sm text-center">
+                    (Warning: May cause permanent brain damage)
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-green-300 p-6 rounded-lg shadow-lg transform hover:scale-110 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Pointless Quiz</h2>
+                <div class="mb-4">
+                    <p class="mb-2">What is the airspeed velocity of an unladen swallow?</p>
+                    <select id="swallow-quiz" class="w-full p-2 rounded border-2 border-black">
+                        <option>African or European?</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>Banana</option>
+                    </select>
+                </div>
+                <button id="submit-quiz" class="w-full py-3 bg-purple-400 hover:bg-purple-600 text-white font-bold rounded">
+                    Submit (does nothing)
+                </button>
+            </div>
+        </div>
+
+        <!-- Annoying popup -->
+        <div id="stupid-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-8 rounded-lg max-w-md text-center border-4 border-red-500 animate-bounce">
+                <h2 class="text-3xl font-bold mb-4">CONGRATULATIONS!</h2>
+                <p class="mb-6">You've won absolutely nothing! 🎉</p>
+                <button id="close-popup" class="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded">
+                    Close this pointless popup
+                </button>
+            </div>
+        </div>
+
+        <!-- Moving text -->
+        <div class="bg-orange-200 p-4 mb-8 overflow-hidden">
+            <marquee behavior="scroll" direction="left" scrollamount="15" class="text-2xl">
+                🚨 WARNING: THIS WEBSITE HAS NO PURPOSE WHATSOEVER 🚨 &nbsp;&nbsp;&nbsp; 
+                💩 YOU'RE WASTING YOUR TIME HERE 💩 &nbsp;&nbsp;&nbsp;
+                🎪 WELCOME TO THE CIRCUS OF STUPIDITY 🎪 &nbsp;&nbsp;&nbsp;
+                🤪 WHY ARE YOU STILL READING THIS? 🤪
+            </marquee>
+        </div>
+
+        <!-- Random image generator -->
+        <div class="mb-12 p-6 bg-purple-200 rounded-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center">Random Image Generator</h2>
+            <div class="flex justify-center mb-4">
+                <div id="random-image" class="w-64 h-64 bg-gray-300 flex items-center justify-center">
+                    <p>Click below for nonsense</p>
+                </div>
+            </div>
+            <button id="generate-image" class="w-full py-3 bg-yellow-400 hover:bg-yellow-600 text-black font-bold rounded">
+                Generate Useless Image
+            </button>
+        </div>
+
+        <!-- Fake loading bar -->
+        <div class="mb-12 p-6 bg-indigo-200 rounded-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center">Fake Loading Bar</h2>
+            <div class="w-full bg-gray-300 rounded-full h-8 mb-4">
+                <div id="loading-bar" class="bg-blue-600 h-8 rounded-full" style="width: 0%"></div>
+            </div>
+            <button id="start-loading" class="w-full py-3 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">
+                Pretend to load something
+            </button>
+        </div>
+
+        <!-- Mouse follower -->
+        <div id="mouse-follower" class="fixed w-8 h-8 bg-red-500 rounded-full pointer-events-none hidden"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white p-6 text-center">
+        <p class="text-xl">This website proudly serves no purpose whatsoever</p>
+        <p class="mt-2">© 2023 Stupid Website™ - All rights reserved (but who cares?)</p>
+        <div class="mt-4">
+            <button id="rainbow-mode" class="px-4 py-2 bg-white text-black font-bold rounded">
+                🌈 Activate RAINBOW MODE 🌈
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Stupid button functionality
+        document.getElementById('stupid-button').addEventListener('click', function() {
+            document.getElementById('stupid-popup').classList.remove('hidden');
+            this.textContent = "I TOLD YOU NOT TO CLICK ME!";
+            this.classList.add('bg-red-700');
+            
+            // Play annoying sound
+            const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+            audio.volume = 0.5;
+            audio.play();
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('stupid-popup').classList.add('hidden');
+        });
+
+        // Counter functionality
+        let count = 0;
+        document.getElementById('increment').addEventListener('click', function() {
+            count++;
+            document.getElementById('counter').textContent = count;
+            
+            // Make the counter change color randomly
+            const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('counter').style.color = randomColor;
+            
+            // Make button grow slightly each click
+            this.style.transform = `scale(${1 + count*0.05})`;
+        });
+
+        // Random noise player
+        document.getElementById('play-noise').addEventListener('click', function() {
+            const noises = [
+                'https://www.soundjay.com/mechanical/sounds/air-horn-1.mp3',
+                'https://www.soundjay.com/misc/sounds/cartoon-sneezing-01.mp3',
+                'https://www.soundjay.com/human/sounds/fart-01.mp3',
+                'https://www.soundjay.com/misc/sounds/cow-moo-01.mp3'
+            ];
+            const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+            const audio = new Audio(randomNoise);
+            audio.volume = 0.7;
+            audio.play();
+            
+            this.textContent = "WHY WOULD YOU DO THAT?";
+            setTimeout(() => {
+                this.textContent = "🔊 Play annoying sound";
+            }, 2000);
+        });
+
+        // Random image generator
+        const imagePlaceholder = document.getElementById('random-image');
+        document.getElementById('generate-image').addEventListener('click', function() {
+            const width = Math.floor(Math.random() * 300) + 200;
+            const height = Math.floor(Math.random() * 300) + 200;
+            const randomImage = `https://picsum.photos/${width}/${height}?random=${Math.random()}`;
+            
+            imagePlaceholder.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = randomImage;
+            img.alt = 'Random nonsense image';
+            img.className = 'w-full h-full object-cover';
+            imagePlaceholder.appendChild(img);
+            
+            // Make the button dance
+            this.classList.add('animate-spin');
+            setTimeout(() => {
+                this.classList.remove('animate-spin');
+            }, 1000);
+        });
+
+        // Fake loading bar
+        document.getElementById('start-loading').addEventListener('click', function() {
+            const loadingBar = document.getElementById('loading-bar');
+            loadingBar.style.width = '0%';
+            
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    this.textContent = "Just kidding, nothing loaded!";
+                    setTimeout(() => {
+                        this.textContent = "Pretend to load something";
+                    }, 2000);
+                } else {
+                    width += Math.random() * 10;
+                    loadingBar.style.width = width + '%';
+                }
+            }, 200);
+        });
+
+        // Mouse follower
+        document.addEventListener('mousemove', function(e) {
+            const follower = document.getElementById('mouse-follower');
+            follower.classList.remove('hidden');
+            follower.style.left = (e.pageX - 15) + 'px';
+            follower.style.top = (e.pageY - 15) + 'px';
+            
+            // Change color randomly
+            if (Math.random() > 0.9) {
+                const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                follower.style.backgroundColor = randomColor;
+            }
+        });
+
+        // Rainbow mode
+        document.getElementById('rainbow-mode').addEventListener('click', function() {
+            document.body.classList.toggle('stupid-rainbow');
+            
+            if (document.body.classList.contains('stupid-rainbow')) {
+                this.innerHTML = "🌈 DEACTIVATE RAINBOW MODE 🌈";
+            } else {
+                this.innerHTML = "🌈 ACTIVATE RAINBOW MODE 🌈";
+            }
+        });
+
+        // Make all images spin when clicked
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.classList.toggle('stupid-spin');
+            }
+        });
+
+        // Randomly change background color every few seconds
+        setInterval(() => {
+            if (!document.body.classList.contains('stupid-rainbow')) {
+                const colors = ['bg-pink-100', 'bg-blue-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100'];
+                const currentColor = document.body.className.split(' ').find(cls => cls.startsWith('bg-') && cls.endsWith('-100'));
+                let newColor;
+                
+                do {
+                    newColor = colors[Math.floor(Math.random() * colors.length)];
+                } while (newColor === currentColor);
+                
+                if (currentColor) {
+                    document.body.classList.remove(currentColor);
+                }
+                document.body.classList.add(newColor);
+            }
+        }, 5000);
+
+        // Make header spin continuously
+        setInterval(() => {
+            const header = document.querySelector('header');
+            header.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+        }, 100);
+    </script>
+</body>
+  </html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupid Website™ - The Dumbest Place Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes rainbow {
+            0% { background-color: red; }
+            14% { background-color: orange; }
+            28% { background-color: yellow; }
+            42% { background-color: green; }
+            57% { background-color: blue; }
+            71% { background-color: indigo; }
+            85% { background-color: violet; }
+            100% { background-color: red; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .stupid-spin {
+            animation: spin 0.5s linear infinite;
+        }
+        .stupid-rainbow {
+            animation: rainbow 5s linear infinite;
+        }
+        .stupid-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .stupid-cursor {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤪</text></svg>"), auto;
+        }
+        .stupid-font {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+    </style>
+</head>
+<body class="stupid-cursor stupid-font min-h-screen bg-yellow-100 overflow-x-hidden">
+    <!-- Annoying floating emoji -->
+    <div class="fixed top-10 right-10 text-6xl stupid-float">🤪</div>
+    <div class="fixed bottom-10 left-10 text-6xl stupid-float" style="animation-delay: 1s;">🤡</div>
+    <div class="fixed top-1/2 left-1/4 text-6xl stupid-float" style="animation-delay: 2s;">👻</div>
+
+    <!-- Main content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-12 p-6 rounded-xl stupid-rainbow text-center border-8 border-dashed border-purple-600">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 stupid-spin">STUPID WEBSITE™</h1>
+            <p class="text-2xl">The most pointless website on the internet (probably)</p>
+            <div class="mt-4">
+                <button id="stupid-button" class="px-8 py-4 bg-green-500 hover:bg-red-500 text-white font-bold rounded-full text-2xl transition-all duration-100 transform hover:scale-150 hover:rotate-180">
+                    DON'T CLICK ME!
+                </button>
+            </div>
+        </header>
+
+        <!-- Stupid features -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Feature 1 -->
+            <div class="bg-pink-300 p-6 rounded-lg shadow-lg transform hover:skew-x-12 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Useless Counter</h2>
+                <div class="text-center mb-4">
+                    <span id="counter" class="text-5xl font-bold">0</span>
+                </div>
+                <button id="increment" class="w-full py-3 bg-blue-400 hover:bg-blue-600 text-white font-bold rounded">
+                    Click to waste time
+                </button>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-blue-300 p-6 rounded-lg shadow-lg transform hover:rotate-6 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Random Noise</h2>
+                <div class="text-center mb-4">
+                    <button id="play-noise" class="px-6 py-3 bg-red-400 hover:bg-red-600 text-white font-bold rounded">
+                        🔊 Play annoying sound
+                    </button>
+                </div>
+                <div class="text-sm text-center">
+                    (Warning: May cause permanent brain damage)
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-green-300 p-6 rounded-lg shadow-lg transform hover:scale-110 transition-all duration-300">
+                <h2 class="text-3xl font-bold mb-3 text-center">Pointless Quiz</h2>
+                <div class="mb-4">
+                    <p class="mb-2">What is the airspeed velocity of an unladen swallow?</p>
+                    <select id="swallow-quiz" class="w-full p-2 rounded border-2 border-black">
+                        <option>African or European?</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>Banana</option>
+                    </select>
+                </div>
+                <button id="submit-quiz" class="w-full py-3 bg-purple-400 hover:bg-purple-600 text-white font-bold rounded">
+                    Submit (does nothing)
+                </button>
+            </div>
+        </div>
+
+        <!-- Annoying popup -->
+        <div id="stupid-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-8 rounded-lg max-w-md text-center border-4 border-red-500 animate-bounce">
+                <h2 class="text-3xl font-bold mb-4">CONGRATULATIONS!</h2>
+                <p class="mb-6">You've won absolutely nothing! 🎉</p>
+                <button id="close-popup" class="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded">
+                    Close this pointless popup
+                </button>
+            </div>
+        </div>
+
+        <!-- Moving text -->
+        <div class="bg-orange-200 p-4 mb-8 overflow-hidden">
+            <marquee behavior="scroll" direction="left" scrollamount="15" class="text-2xl">
+                🚨 WARNING: THIS WEBSITE HAS NO PURPOSE WHATSOEVER 🚨 &nbsp;&nbsp;&nbsp; 
+                💩 YOU'RE WASTING YOUR TIME HERE 💩 &nbsp;&nbsp;&nbsp;
+                🎪 WELCOME TO THE CIRCUS OF STUPIDITY 🎪 &nbsp;&nbsp;&nbsp;
+                🤪 WHY ARE YOU STILL READING THIS? 🤪
+            </marquee>
+        </div>
+
+        <!-- Random image generator -->
+        <div class="mb-12 p-6 bg-purple-200 rounded-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center">Random Image Generator</h2>
+            <div class="flex justify-center mb-4">
+                <div id="random-image" class="w-64 h-64 bg-gray-300 flex items-center justify-center">
+                    <p>Click below for nonsense</p>
+                </div>
+            </div>
+            <button id="generate-image" class="w-full py-3 bg-yellow-400 hover:bg-yellow-600 text-black font-bold rounded">
+                Generate Useless Image
+            </button>
+        </div>
+
+        <!-- Fake loading bar -->
+        <div class="mb-12 p-6 bg-indigo-200 rounded-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center">Fake Loading Bar</h2>
+            <div class="w-full bg-gray-300 rounded-full h-8 mb-4">
+                <div id="loading-bar" class="bg-blue-600 h-8 rounded-full" style="width: 0%"></div>
+            </div>
+            <button id="start-loading" class="w-full py-3 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">
+                Pretend to load something
+            </button>
+        </div>
+
+        <!-- Mouse follower -->
+        <div id="mouse-follower" class="fixed w-8 h-8 bg-red-500 rounded-full pointer-events-none hidden"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white p-6 text-center">
+        <p class="text-xl">This website proudly serves no purpose whatsoever</p>
+        <p class="mt-2">© 2023 Stupid Website™ - All rights reserved (but who cares?)</p>
+        <div class="mt-4">
+            <button id="rainbow-mode" class="px-4 py-2 bg-white text-black font-bold rounded">
+                🌈 Activate RAINBOW MODE 🌈
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Stupid button functionality
+        document.getElementById('stupid-button').addEventListener('click', function() {
+            document.getElementById('stupid-popup').classList.remove('hidden');
+            this.textContent = "I TOLD YOU NOT TO CLICK ME!";
+            this.classList.add('bg-red-700');
+            
+            // Play annoying sound
+            const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+            audio.volume = 0.5;
+            audio.play();
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('stupid-popup').classList.add('hidden');
+        });
+
+        // Counter functionality
+        let count = 0;
+        document.getElementById('increment').addEventListener('click', function() {
+            count++;
+            document.getElementById('counter').textContent = count;
+            
+            // Make the counter change color randomly
+            const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('counter').style.color = randomColor;
+            
+            // Make button grow slightly each click
+            this.style.transform = `scale(${1 + count*0.05})`;
+        });
+
+        // Random noise player
+        document.getElementById('play-noise').addEventListener('click', function() {
+            const noises = [
+                'https://www.soundjay.com/mechanical/sounds/air-horn-1.mp3',
+                'https://www.soundjay.com/misc/sounds/cartoon-sneezing-01.mp3',
+                'https://www.soundjay.com/human/sounds/fart-01.mp3',
+                'https://www.soundjay.com/misc/sounds/cow-moo-01.mp3'
+            ];
+            const randomNoise = noises[Math.floor(Math.random() * noises.length)];
+            const audio = new Audio(randomNoise);
+            audio.volume = 0.7;
+            audio.play();
+            
+            this.textContent = "WHY WOULD YOU DO THAT?";
+            setTimeout(() => {
+                this.textContent = "🔊 Play annoying sound";
+            }, 2000);
+        });
+
+        // Random image generator
+        const imagePlaceholder = document.getElementById('random-image');
+        document.getElementById('generate-image').addEventListener('click', function() {
+            const width = Math.floor(Math.random() * 300) + 200;
+            const height = Math.floor(Math.random() * 300) + 200;
+            const randomImage = `https://picsum.photos/${width}/${height}?random=${Math.random()}`;
+            
+            imagePlaceholder.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = randomImage;
+            img.alt = 'Random nonsense image';
+            img.className = 'w-full h-full object-cover';
+            imagePlaceholder.appendChild(img);
+            
+            // Make the button dance
+            this.classList.add('animate-spin');
+            setTimeout(() => {
+                this.classList.remove('animate-spin');
+            }, 1000);
+        });
+
+        // Fake loading bar
+        document.getElementById('start-loading').addEventListener('click', function() {
+            const loadingBar = document.getElementById('loading-bar');
+            loadingBar.style.width = '0%';
+            
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    this.textContent = "Just kidding, nothing loaded!";
+                    setTimeout(() => {
+                        this.textContent = "Pretend to load something";
+                    }, 2000);
+                } else {
+                    width += Math.random() * 10;
+                    loadingBar.style.width = width + '%';
+                }
+            }, 200);
+        });
+
+        // Mouse follower
+        document.addEventListener('mousemove', function(e) {
+            const follower = document.getElementById('mouse-follower');
+            follower.classList.remove('hidden');
+            follower.style.left = (e.pageX - 15) + 'px';
+            follower.style.top = (e.pageY - 15) + 'px';
+            
+            // Change color randomly
+            if (Math.random() > 0.9) {
+                const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                follower.style.backgroundColor = randomColor;
+            }
+        });
+
+        // Rainbow mode
+        document.getElementById('rainbow-mode').addEventListener('click', function() {
+            document.body.classList.toggle('stupid-rainbow');
+            
+            if (document.body.classList.contains('stupid-rainbow')) {
+                this.innerHTML = "🌈 DEACTIVATE RAINBOW MODE 🌈";
+            } else {
+                this.innerHTML = "🌈 ACTIVATE RAINBOW MODE 🌈";
+            }
+        });
+
+        // Make all images spin when clicked
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.classList.toggle('stupid-spin');
+            }
+        });
+
+        // Randomly change background color every few seconds
+        setInterval(() => {
+            if (!document.body.classList.contains('stupid-rainbow')) {
+                const colors = ['bg-pink-100', 'bg-blue-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100'];
+                const currentColor = document.body.className.split(' ').find(cls => cls.startsWith('bg-') && cls.endsWith('-100'));
+                let newColor;
+                
+                do {
+                    newColor = colors[Math.floor(Math.random() * colors.length)];
+                } while (newColor === currentColor);
+                
+                if (currentColor) {
+                    document.body.classList.remove(currentColor);
+                }
+                document.body.classList.add(newColor);
+            }
+        }, 5000);
+
+        // Make header spin continuously
+        setInterval(() => {
+            const header = document.querySelector('header');
+            header.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+        }, 100);
+    </script>
+</body>
+</html>
